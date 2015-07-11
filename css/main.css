@@ -1,0 +1,10 @@
+.wvkmd_icon {
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+	margin: 6px 5px 6px 0;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAUklEQVQoz2NgoAn4b/D/ABQa4Fbk8B8GHGiq6D8HUIHD/wK4ogIwnwNdWcN/dNCAzbQGgkrQlDXgC6kGgkqgyhooihAFkAkYUAFXMCIDB4aBAACdv5kJ1BUU4gAAAABJRU5ErkJggg==');
+	background-color: #5F7D9D;
+    background-size: 14px;
+    background-position: 1px 1px;
+}

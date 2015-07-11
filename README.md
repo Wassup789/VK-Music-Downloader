@@ -7,23 +7,16 @@ This code is licensed under the MIT License
 ## About
 
 ### Permissions
- - None
+ - \*://\*.vk.com/\*
 
 ## Downloads
 
 
 **Latest Stable Release:**
 
- - **Version 1.0.9.1** - 07-15-2014 21:41 PDT
+ - **Version 1.0.0.0** - 07-10-2015 23:30 PDT
  - [Download Here via Google Drive][Dld_Latest_GD]
  - [Direct Link via Dropbox][Dld_Latest_DB]
-
-**Latest Beta Release:**
-*Note: The beta release will not receive stable updates.*
-
- - **Version 1.0.9.0** -  07-11-2014 22:58 PDT
- - [Download Here via Google Drive][Dld_Beta_GD]
- - [Direct Link via Dropbox][Dld_Beta_DB]
 
 **Release Archive:**
 
@@ -40,10 +33,8 @@ This code is licensed under the MIT License
 [See CHANGELOG.md][CLog.md]
 
 
-  [Dld_Latest_GD]: http://google.com
-  [Dld_Latest_DB]: http://google.com
-  [Dld_Beta_GD]: http://google.com
-  [Dld_Beta_DB]: http://google.com
-  [Dld_Archive]: http://google.com
+  [Dld_Latest_GD]: https://goo.gl/7DQWiZ
+  [Dld_Latest_DB]: https://dl.orangedox.com/jJvmjirwbXEHAN4VJ2/VK_Music_Downloader_v1.0.0.0.crx
+  [Dld_Archive]: http://goo.gl/xzj9BJ
   
   [CLog.md]: https://github.com/Wassup789/VK-Music-Downloader/blob/master/CHANGELOG.md
