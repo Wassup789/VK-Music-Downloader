@@ -14,7 +14,7 @@ This code is licensed under the MIT License
 
 **Latest Stable Release:**
 
- - **Version 1.0.0.0** - 07-10-2015 23:30 PDT
+ - **Version 1.0.0.1** - 07-11-2015 19:05 PDT
  - [Download Here via Google Drive][Dld_Latest_GD]
  - [Direct Link via Dropbox][Dld_Latest_DB]
 
@@ -33,8 +33,8 @@ This code is licensed under the MIT License
 [See CHANGELOG.md][CLog.md]
 
 
-  [Dld_Latest_GD]: https://goo.gl/7DQWiZ
-  [Dld_Latest_DB]: https://dl.orangedox.com/jJvmjirwbXEHAN4VJ2/VK_Music_Downloader_v1.0.0.0.crx
+  [Dld_Latest_GD]: https://goo.gl/Mh0j5o
+  [Dld_Latest_DB]: https://dl.dropboxusercontent.com/u/14210090/VK%20Music%20Downloader/VK_Music_Downloader_v1.0.0.1.crx
   [Dld_Archive]: http://goo.gl/xzj9BJ
   
   [CLog.md]: https://github.com/Wassup789/VK-Music-Downloader/blob/master/CHANGELOG.md

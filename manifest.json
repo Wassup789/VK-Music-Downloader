@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "VK Music Downloader (beta)",
   "description": "Download songs and albums on VK.com.",
-  "version": "1.0.0.0",
+  "version": "1.0.0.1",
   "permissions": [ "*://*.vk.com/*" ],
    "icons": {
       "18": "img/18.png",
@@ -12,9 +12,10 @@
    "content_scripts": [
       {
 	     "matches": [ "*://*.vk.com/*" ],
-		 "js":      [ "js/jquery.min.js", "js/main.js" ],
+		 "js":      [ "js/script.js" ],
 		 "css":     [ "css/main.css" ]
 	  }
    ],
-   "update_url": "https://dl.dropboxusercontent.com/u/14210090/Youtube%20Notifications/updates.xml"
+   "web_accessible_resources": [ "js/main.js" ],
+   "update_url": "https://dl.dropboxusercontent.com/u/14210090/VK%20Music%20Downloader/updates.xml"
 }
