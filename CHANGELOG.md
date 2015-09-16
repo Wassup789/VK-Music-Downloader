@@ -1,6 +1,9 @@
 Changelog
 =====
 
+## v1.0.0.2 (9-16-2015)
+ * Changed audio download names to it's appropriate name
+
 ## v1.0.0.1 (07-11-2015)
  * Added browser history and ajax support
  * Added infinity page scroll support

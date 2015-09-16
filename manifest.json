@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "VK Music Downloader",
   "description": "Download songs and albums on VK.com.",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
    "icons": {
       "18": "img/18.png",
       "48": "img/48.png",
@@ -16,5 +16,14 @@
 	  }
    ],
    "web_accessible_resources": [ "js/main.js" ],
+   "background": {
+      "scripts": ["js/background.js"]
+   },
+   "externally_connectable": {
+      "matches": ["*://*.vk.com/*"]
+   },
+   "permissions": [
+      "downloads"
+   ],
    "update_url": "https://dl.dropboxusercontent.com/u/14210090/VK%20Music%20Downloader/updates.xml"
 }
