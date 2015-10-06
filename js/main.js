@@ -13,7 +13,7 @@ $(function(){
 	$(".wvkmd_a").on("click", function(e){
 		e.preventDefault(true);
 		var download = $(this).attr("href"),
-			downloadName = $(this).attr("download");
+			downloadName = $(this).attr("download").replace(/[\\/:*?"<>|]/g, "");
 		chrome.runtime.sendMessage(vkmdExtId, {title: "download", url: download, name: downloadName});
 	});
 });
@@ -53,14 +53,14 @@ function updateCheck() {
 function addDownloadBtn() {
 	var elem = $(".audio");
 	for(var i = 0; i < elem.length; i++) {
-		var audioBranch = $(elem[i]).children(".area").children("table").children("tbody").children("tr"),
-			download = audioBranch.children("td").children("input").attr("value"),
-			downloadName = audioBranch.children(".info").children(".title_wrap").children("b").text().trim(),
-			downloadName2 = audioBranch.children(".info").children(".title_wrap").children(".title").text().trim(),
-			extension = audioBranch.children("td").children("input").attr("value").split('.').pop().split("?").shift(),
+		var audioBranch = $(elem[i]).find(".area table tbody tr"),
+			download = audioBranch.find("td input").attr("value"),
+			downloadName = audioBranch.find(".info .title_wrap b").text().trim(),
+			downloadName2 = audioBranch.find(".info .title_wrap .title").text().trim(),
+			extension = audioBranch.find("td input").attr("value").split('.').pop().split("?").shift(),
 			newElem = "<td id=\"wvkmd_td\"><a class=\"wvkmd_a\" href=\"" + download + "\" download=\"" + downloadName + " - " + downloadName2 + "." + extension + "\"><div class=\"wvkmd_icon\"></div></a></td>";
 		
-		if($(elem[i]).children(".area").children("table").children("tbody").children("tr").children("td")[1].id != "wvkmd_td")
-			$(newElem).insertAfter($($(elem[i]).children(".area").children("table").children("tbody").children("tr").children("td")[0]));
+		if($(elem[i]).find(".area table tbody tr td")[1].id != "wvkmd_td")
+			$(newElem).insertAfter($($(elem[i]).find(".area table tbody tr td")[0]));
 	}
 }
