@@ -11,7 +11,11 @@ $(function(){
 	updateCheck();
 	
 	$(".wvkmd_a").on("click", function(e){
-		e.preventDefault(true);
+		e.preventDefault();
+		
+		var audioId = $(this).parents(".audio").attr("id").replace("audio", "");
+		playAudioNew(audioId);
+		
 		var download = $(this).attr("href"),
 			downloadName = $(this).attr("download").replace(/[\\/:*?"<>|]/g, "");
 		chrome.runtime.sendMessage(vkmdExtId, {title: "download", url: download, name: downloadName});
