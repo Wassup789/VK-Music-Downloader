@@ -26,15 +26,9 @@ This code is licensed under the MIT License
  * None
 
 
-## Screenshots
+## Screenshot
 
-**Before**
-
-[![Screenshot 1](http://i.imgur.com/7o8ZZ2C.png)](http://i.imgur.com/7o8ZZ2C.png)
-
-**After**
-
-[![Screenshot 2](http://i.imgur.com/RZTfvNh.png)](http://i.imgur.com/RZTfvNh.png)
+[![Screenshot](http://i.imgur.com/Mt4iRhN.png)](http://i.imgur.com/Mt4iRhN.png)
 
 ## Changelog
 [See CHANGELOG.md][CLog.md]
