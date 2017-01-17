@@ -6,65 +6,45 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 var vkmdExtId = document.body.getAttribute("data-vkmd-id");
 document.body.removeAttribute("data-vkmd-id");
 
+var style = document.createElement("style");
+style.innerHTML = ".audio_inline_player {left: 65px;}";
+document.body.appendChild(style);
+
 $(function(){
 	addDownloadBtn();
-	updateCheck();
+	//updateCheck();
+    setInterval(function(){
+        addDownloadBtn();
+    }, 1000);
 	
-	$(".wvkmd_a").on("click", function(e){
+	$(".wvkmd_button").on("click", function(e){
 		e.preventDefault();
-		
-		var audioId = $(this).parents(".audio").attr("id").replace("audio", "");
-		playAudioNew(audioId);
-		
-		var download = $(this).attr("href"),
-			downloadName = $(this).attr("download").replace(/[\\/:*?"<>|]/g, "");
-		chrome.runtime.sendMessage(vkmdExtId, {title: "download", url: download, name: downloadName});
+
+        setTimeout(function() {// Not the best method
+            getAudioPlayer().pause();
+        }, 500);
+
+        var url = "https://vk.com/al_audio.php?act=reload_audio&al=1&ids=" + $(this).closest(".audio_row").attr("data-full-id");
+        $.ajax({
+            url: url,
+            dataType: "text",
+            success: function (data) {
+                var arr = JSON.parse(data.split("<!json>")[1].split("<!>")[0])[0];
+                    url = arr[2],
+                    name = arr[4].trim() + " - " + arr[3].trim(),
+                    extension = "." + url.split("?")[0].split(".").pop();
+
+                chrome.runtime.sendMessage(vkmdExtId, {title: "download", url: url, name: name + extension});
+            }
+        });
 	});
 });
 
-changeLayerQueueTimeout();
-function changeLayerQueueTimeout() {
-	if(typeof layerQueue !== "undefined")
-		changeLayerQueue();
-	else
-		setTimeout(function(){changeLayerQueueTimeout();},500);
-}
-
-function changeLayerQueue() {
-	var layerQueueClear = eval("(" + layerQueue.clear.toString() + ")");
-	layerQueue.clear = function() {
-		layerQueueClear();
-		setTimeout(function(){
-			addDownloadBtn();
-			updateCheck();
-		}, 500);
-	};
-}
-
-function updateCheck() {
-	if(typeof $(".more_link").children(".progress")[0] != "undefined") {
-		var observer = new MutationObserver(function(mutations) {
-			mutations.forEach(function(mutationRecord) {
-				setTimeout(function(){
-					addDownloadBtn();
-				}, 500);
-			});
-		});
-		observer.observe($(".more_link").children(".progress")[0], {attributes: true, attributeFilter: ["style"]});
-	}
-}
-
 function addDownloadBtn() {
-	var elem = $(".audio");
+	var elem = $(".audio_row");
 	for(var i = 0; i < elem.length; i++) {
-		var audioBranch = $(elem[i]).find(".area table tbody tr"),
-			download = audioBranch.find("td input").attr("value"),
-			downloadName = audioBranch.find(".info .title_wrap b").text().trim(),
-			downloadName2 = audioBranch.find(".info .title_wrap .title").text().trim(),
-			extension = audioBranch.find("td input").attr("value").split('.').pop().split("?").shift(),
-			newElem = "<td id=\"wvkmd_td\"><a class=\"wvkmd_a\" href=\"" + download + "\" download=\"" + downloadName + " - " + downloadName2 + "." + extension + "\"><div class=\"wvkmd_icon\"></div></a></td>";
-		
-		if($(elem[i]).find(".area table tbody tr td")[1].id != "wvkmd_td")
-			$(newElem).insertAfter($($(elem[i]).find(".area table tbody tr td")[0]));
+        if($(elem[i]).find(".wvkmd_container").length < 1) {
+			$("<div class=\"wvkmd_container\"><button class=\"wvkmd_button\"></button></div>").insertAfter($(elem[i]).find(".audio_play_wrap"));
+		}
 	}
 }

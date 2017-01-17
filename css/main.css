@@ -1,10 +1,18 @@
-.wvkmd_icon {
-    height: 16px;
-    width: 16px;
-    border-radius: 3px;
-	margin: 6px 5px 6px 0;
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAUklEQVQoz2NgoAn4b/D/ABQa4Fbk8B8GHGiq6D8HUIHD/wK4ogIwnwNdWcN/dNCAzbQGgkrQlDXgC6kGgkqgyhooihAFkAkYUAFXMCIDB4aBAACdv5kJ1BUU4gAAAABJRU5ErkJggg==');
-	background-color: #5F7D9D;
-    background-size: 14px;
-    background-position: 1px 1px;
+.wvkmd_container {
+    float: left;
+}
+.wvkmd_button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #577ca1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAUklEQVQoz2NgoAn4b/D/ABQa4Fbk8B8GHGiq6D8HUIHD/wK4ogIwnwNdWcN/dNCAzbQGgkrQlDXgC6kGgkqgyhooihAFkAkYUAFXMCIDB4aBAACdv5kJ1BUU4gAAAABJRU5ErkJggg==) 3px 3px no-repeat;
+    outline: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    margin: 0 -2px 0 4px;
+}
+.claimed .wvkmd_button,
+.claimed .audio_play {
+    background-color: #8DA5BD;
 }
